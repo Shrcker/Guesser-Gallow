@@ -1,0 +1,41 @@
+{
+  "name": "guesser-gallow",
+  "version": "1.0.0",
+  "description": "Fun multiplayer word guessing game where you need to guess the right word before they execute Dash in cold blood!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shrcker/Guesser-Gallow.git"
+  },
+  "keywords": [
+    "game",
+    "multiplayer",
+    "high-scores",
+    "leaderboard"
+  ],
+  "author": "Shrcker",
+  "license": "SEE LICENSE IN README.md",
+  "bugs": {
+    "url": "https://github.com/Shrcker/Guesser-Gallow/issues"
+  },
+  "homepage": "https://github.com/Shrcker/Guesser-Gallow#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5"
+  }
+}
