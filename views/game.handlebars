@@ -1,0 +1,23 @@
+  <h1>Guess the Word:</h1>
+    <div id="word-to-guess">
+        <!-- Render the word to be guessed -->
+        {{#each gameState.wordToGuess}}
+            <span>{{this}}</span>
+        {{/each}}
+    </div>
+    <div id="hangman-drawing">
+        <!-- Render hangman drawing based on incorrect guesses -->
+        <!-- You can use CSS to style different parts of the hangman drawing -->
+        <!-- For example, you could have different classes for head, body, arms, etc. -->
+        <!-- Display different parts of the hangman based on the number of incorrect guesses -->
+    </div>
+    <div id="letters-to-choose">
+        <!-- Render letters for the player to choose from -->
+        {{#each letters}}
+            <button>{{this}}</button>
+        {{/each}}
+    </div>
+    <div id="incorrect-guesses">
+        Incorrect Guesses: {{gameState.incorrectGuesses}}
+    </div>
+    <!-- Add more UI elements as needed -->
