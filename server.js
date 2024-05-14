@@ -1,8 +1,9 @@
 const express = require("express");
 const session = require("express-session");
+const { create } = require('hbs');
 // Stand in requires for when I work on controllers
 const routes = require("./controllers");
-const helpers = require(".utils/helpers");
+const helpers = require("./utils/helpers");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
