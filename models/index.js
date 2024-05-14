@@ -1,7 +1,7 @@
 const Score = require("./Score");
 const User = require("./User");
 
-Post.belongsTo(User, {
+Score.belongsTo(User, {
 	foreignKey: "user_id",
 });
 
