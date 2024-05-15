@@ -35,14 +35,6 @@ User.init(
 				len: [8],
 			},
 		},
-		score_id: {
-			type: DataTypes.INTEGER,
-			allowNull: true,
-			references: {
-				model: "score",
-				key: "id",
-			},
-		},
 	},
 	{
 		hooks: {
