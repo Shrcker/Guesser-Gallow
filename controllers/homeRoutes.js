@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 
     const scores = scoreData.map((project) => project.get({ plain: true }));
 
-    res.render("homepage", {
+    res.render("game", {
       scores,
       logged_in: req.session.logged_in
     });
