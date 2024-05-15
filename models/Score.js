@@ -11,14 +11,6 @@ Score.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
-		user_id: {
-			type: DataTypes.STRING,
-			allownull: false,
-      references: {
-        model: "user",
-        key: "id",
-      },
-		},
 		date_created: {
 			type: DataTypes.DATE,
 			allowNull: false,
