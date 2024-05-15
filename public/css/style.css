@@ -28,3 +28,10 @@
     box-shadow: 0 2px #000000;
     transform: translateY(4px);
 }
+
+/* custom Google font */
+.handlee-regular {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
