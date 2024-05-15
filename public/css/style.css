@@ -35,3 +35,78 @@
     font-weight: 400;
     font-style: normal;
   }
+
+ /* */ 
+.gallows {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.beam {
+    width: 150px;
+    height: 20px;
+    background-color: #8b4513;
+}
+.base {
+    width: 100px;
+    height: 20px;
+    background-color: #8b4513;
+}
+.hangman{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.head {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.body {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    width: 20px;
+    height: 80px;
+    background-color: #000;
+}
+.right-arm, 
+.left-arm {
+    position: absolute;
+    top: 80px;
+    width: 60px;
+    height: 20px;
+    background-color: #000;
+}
+.left-arm {
+    left: 70px;
+    transform: rotate(45deg);
+}
+.right-arm {
+    right: 70px;
+    transform: rotate(-45deg);
+}
+.right-leg,
+.left-leg {
+    position: absolute;
+    top: 140px;
+    width: 60px;
+    height: 20px;
+    background-color: #000;
+}
+.right-leg {
+    right: 70px;
+    transform: rotate(45deg);
+}
+.left-leg {
+    left: 70px;
+    transform: rotate(-45deg);
+}
+.hidden {
+    display: none;
+}
