@@ -1,23 +1,27 @@
   <h1>Guess the Word:</h1>
     <div id="word-to-guess">
         <!-- Render the word to be guessed -->
-        {{#each gameState.wordToGuess}}
-            <span>{{this}}</span>
+       {{#each gameState.wordToGuess}}
+            <span>{{#if (includes ../gameState.guessedLetters this)}}{{this}}{{else}}_{{/if}}</span>
         {{/each}}
     </div>
-    <div id="hangman-drawing">
-        <!-- Render hangman drawing based on incorrect guesses -->
-        <!-- You can use CSS to style different parts of the hangman drawing -->
-        <!-- For example, you could have different classes for head, body, arms, etc. -->
-        <!-- Display different parts of the hangman based on the number of incorrect guesses -->
+<div id="hangman-drawing" class="hangman">
+<div class="head {{#unless (gte gameState.incorrectGuesses 1)}}hidden{{/unless}}"></div>
+        <div class="body {{#unless (gte gameState.incorrectGuesses 2)}}hidden{{/unless}}"></div>
+        <div class="left-arm {{#unless (gte gameState.incorrectGuesses 3)}}hidden{{/unless}}"></div>
+        <div class="right-arm {{#unless (gte gameState.incorrectGuesses 4)}}hidden{{/unless}}"></div>
+        <div class="left-leg {{#unless (gte gameState.incorrectGuesses 5)}}hidden{{/unless}}"></div>
+        <div class="right-leg {{#unless (gte gameState.incorrectGuesses 6)}}hidden{{/unless}}"></div>
+</div>
     </div>
     <div id="letters-to-choose">
         <!-- Render letters for the player to choose from -->
-        {{#each letters}}
-            <button>{{this}}</button>
+        {{#each "abcdefghijklmnopqrstuvwxyz"}}
+            <button onclick="makeGuess('{{this}}')">{{this}}</button>
         {{/each}}
     </div>
     <div id="incorrect-guesses">
         Incorrect Guesses: {{gameState.incorrectGuesses}}
     </div>
-    <!-- Add more UI elements as needed -->
+
+    <script src="./js/game.js"></script>
