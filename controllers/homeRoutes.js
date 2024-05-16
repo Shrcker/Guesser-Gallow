@@ -13,13 +13,12 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const scores = scoreData.map((project) => project.get({ plain: true }));
+    const scores = await scoreData.map((project) => project.get({ plain: true }));
 
     res.render("game", {
       scores,
       logged_in: req.session.logged_in
     });
-    
   } catch (error) {
     res.status(500).json(error);
   }
