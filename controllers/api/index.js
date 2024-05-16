@@ -5,6 +5,7 @@ const wordRoutes = require("./wordRoutes");
 
 router.use("/users", userRoutes);
 router.use("/scores", scoreRoutes);
+// Adds third party API support for github
 router.use("/randomWord", wordRoutes);
 
 module.exports = router;
