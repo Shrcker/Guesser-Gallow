@@ -1,11 +1,32 @@
-async function makeGuess(letter) {
-    const response = await fetch('/guess', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ letter })
-    });
-    const gameState = await response.json();
+document.addEventListener('DOMContentLoaded', async () => {
+    // Fetch the random word from the server's API endpoint
+    const response = await fetch('/api/randomWord');
+    const wordData = await response.json();
+
+    let gameState = {
+        wordToGuess: wordData.split(''), // Split the word into an array of letters
+        guessedLetters: [],
+        incorrectGuesses: 0,
+        maxIncorrectGuesses: 6
+    };
+
     updateGame(gameState);
+
+    // Bind event listeners to buttons
+    const buttons = document.querySelectorAll('#letters-to-choose button');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => makeGuess(button.textContent, gameState));
+    });
+});
+
+function makeGuess(letter, gameState) {
+    if (!gameState.guessedLetters.includes(letter)) {
+        gameState.guessedLetters.push(letter);
+        if (!gameState.wordToGuess.includes(letter)) {
+            gameState.incorrectGuesses++;
+        }
+        updateGame(gameState);
+    }
 }
 
 function updateGame(gameState) {
