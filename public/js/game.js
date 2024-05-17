@@ -1,31 +1,35 @@
-let gameState = {
-    wordToGuess: initialWord.split(''),
-    guessedLetters: [],
-    incorrectGuesses: 0,
-    maxIncorrectGuesses: 6
-};
+document.addEventListener('DOMContentLoaded', async () => {
+    // Fetch the random word from the server's API endpoint
+    const response = await fetch('/api/randomWord');
+    const wordData = await response.json();
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateGame();
+    let gameState = {
+        wordToGuess: wordData.split(''), // Split the word into an array of letters
+        guessedLetters: [],
+        incorrectGuesses: 0,
+        maxIncorrectGuesses: 6
+    };
+
+    updateGame(gameState);
 
     // Bind event listeners to buttons
     const buttons = document.querySelectorAll('#letters-to-choose button');
     buttons.forEach(button => {
-        button.addEventListener('click', () => makeGuess(button.textContent));
+        button.addEventListener('click', () => makeGuess(button.textContent, gameState));
     });
 });
 
-async function makeGuess(letter) {
+function makeGuess(letter, gameState) {
     if (!gameState.guessedLetters.includes(letter)) {
         gameState.guessedLetters.push(letter);
         if (!gameState.wordToGuess.includes(letter)) {
             gameState.incorrectGuesses++;
         }
-        updateGame();
+        updateGame(gameState);
     }
 }
 
-function updateGame() {
+function updateGame(gameState) {
     const wordToGuessElement = document.getElementById('word-to-guess');
     wordToGuessElement.innerHTML = '';
     gameState.wordToGuess.forEach(letter => {

@@ -1,6 +1,6 @@
   <h1>Guess the Word:</h1>
-<div id="game"></div>
-<div id="word-to-guess"></div>
+   <div id="game">
+        <div id="word-to-guess"></div>
         <div id="hangman-drawing" class="hangman">
             <div class="head hidden"></div>
             <div class="body hidden"></div>
@@ -16,9 +16,5 @@
         </div>
         <div id="incorrect-guesses">Incorrect Guesses: 0</div>
     </div>
-    <script>
-        // Initialize the game with the word passed from the server
-        const initialWord = "{{randomWord}}";
-    </script>
-
+    
     <script src="./js/game.js"></script>
