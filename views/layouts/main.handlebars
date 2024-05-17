@@ -11,17 +11,17 @@
 
 
 <body>
-  <div class="flex-column justify-space-around">
+  <div class="flex-column justify-space-around handlee-regular">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Guesser Gallow</a>
+      <h1 class="h1">
+        <div href="/">Guesser Gallow</div>
       </h1>
-      <nav>
+      <nav class="nav">
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <div class="login-text" href="/login">login</div>
         {{/if}}
       </nav>
     </header>
