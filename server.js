@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
-// Stand in requires for when I work on controllers
 const routes = require("./controllers");
 const helpers = require("./utils/helpers");
 
