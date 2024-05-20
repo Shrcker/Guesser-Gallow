@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2>Welcome, {{1.user.name}}!</h2>
   </div>
 </div>
 
@@ -8,11 +8,11 @@
   <div class="col-md-6">
    <h1>High Scores</h1>
     <ul>
-        {{#each highScores}}
-            <li>{{name}} - {{score}}</li>
+        {{#each this}}
+            <li>{{this.user.name}} - {{this.high_scores}}</li>
         {{/each}}
     </ul>
-
+<a href="/" class="btn dabutton handlee-regular">Play!</a>
 </div>
 
 <script src="./js/scores.js"></script>

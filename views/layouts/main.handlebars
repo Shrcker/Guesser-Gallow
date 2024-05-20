@@ -17,19 +17,14 @@
         <a href="/">Guesser Gallow</a>
       </h1>
       <nav class="nav">
-        {{#if logged_in}}
-        <a href="/profile">profile</a> 
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a class="login-text" href="/login">login</a>
-        {{/if}}
+        <a href="/score" class="btn dabutton handlee-regular">Scores</a>
+        <a href="/profile" class="btn dabutton handlee-regular">Profile</a>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
       {{{ body }}}
     </main>
     <footer>
-      
     </footer>
   </div>
   
