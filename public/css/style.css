@@ -70,28 +70,28 @@ color: #000;
 
 }
  /* hangman*/ 
-.gallows {
+#gallows {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
-.beam {
+#beam {
     width: 150px;
     height: 20px;
     background-color: #8b4513;
 }
-.base {
+#base {
     width: 100px;
     height: 20px;
     background-color: #8b4513;
 }
-.hangman{
+#hangman{
     position: relative;
     width: 200px;
     height: 200px;
 }
-.head {
+#head {
     position: absolute;
     top: 20px;
     left: 80px;
@@ -100,7 +100,7 @@ color: #000;
     background-color: #000;
     border-radius: 50%;
 }
-.body {
+#body {
     position: absolute;
     top: 60px;
     left: 100px;
@@ -108,35 +108,35 @@ color: #000;
     height: 80px;
     background-color: #000;
 }
-.right-arm, 
-.left-arm {
+#right-arm, 
+#left-arm {
     position: absolute;
     top: 80px;
     width: 60px;
     height: 20px;
     background-color: #000;
 }
-.left-arm {
+#left-arm {
     left: 70px;
     transform: rotate(45deg);
 }
-.right-arm {
+#right-arm {
     right: 70px;
     transform: rotate(-45deg);
 }
-.right-leg,
-.left-leg {
+#right-leg,
+#left-leg {
     position: absolute;
     top: 140px;
     width: 60px;
     height: 20px;
     background-color: #000;
 }
-.right-leg {
+#right-leg {
     right: 70px;
     transform: rotate(45deg);
 }
-.left-leg {
+#left-leg {
     left: 70px;
     transform: rotate(-45deg);
 }
