@@ -48,15 +48,10 @@ router.get("/profile", withAuthorization, async (req, res) => {
 router.get("/score", async (req, res) => {
 	try {
 		const scoreData = await Score.findAll({
-			include: [
-				{
-					model: User,
-					attributes: ["name"],
-				},
-			],
+			include: [{ model: User, attributes: ["name"] }],
 		});
 
-		const scores = await scoreData.get({ plain: true });
+		const scores = await scoreData.map((data) => data.get({ plain: true }));
 
 		res.render("scores", {
 			...scores,

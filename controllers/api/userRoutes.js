@@ -39,7 +39,6 @@ router.post("/", async (req, res) => {
 			password: req.body.password,
 		});
 
-		console.log(userData);
 		res.status(200).json(userData);
 	} catch (error) {
 		res.status(400).json(error);
@@ -87,7 +86,6 @@ router.delete("/:id", withAuthorization, async (req, rest) => {
 
 router.post("/login", async (req, res) => {
 	try {
-		console.log("here");
 		const userData = await User.findOne({ where: { name: req.body.name } });
 		const validPassword = await userData.checkPassword(req.body.password);
 
