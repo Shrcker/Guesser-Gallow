@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
 			password: req.body.password,
 		});
 
-    console.log(userData);
+		console.log(userData);
 		res.status(200).json(userData);
 	} catch (error) {
 		res.status(400).json(error);
@@ -86,38 +86,41 @@ router.delete("/:id", withAuthorization, async (req, rest) => {
 });
 
 router.post("/login", async (req, res) => {
-  try {
-    const userData = await User.findOne({ where: { name: req.body.name } });
-    const validPassword = await userData.checkPassword(req.body.password);
+	try {
+		console.log("here");
+		const userData = await User.findOne({ where: { name: req.body.name } });
+		const validPassword = await userData.checkPassword(req.body.password);
 
-    if (!validPassword || !userData) {
-      res.status(500).json({ message: "Incorrect username or password, please try again" });
-      return;
-    }
+		if (!validPassword || !userData) {
+			res
+				.status(400)
+				.json({ message: "Incorrect username or password, please try again" });
+			return;
+		}
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      res.session.logged_in = true;
+		req.session.save(() => {
+			req.session.user_id = userData.id;
+			req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You're logged in!" });
-    });
-  } catch (error) {
-    res.status(400).json(error)
-  }
+			res.json({ user: userData, message: "You're logged in!" });
+		});
+	} catch (error) {
+		res.status(400).json(error);
+	}
 });
 
-router.post("/logout", withAuthorization, async (req, res) => {
-  try {
-    if (req.session.logged_in) {
-      res.session.destroy(() => {
-        res.status(204).end();
-      });
-    } else {
-      res.status(404).end();
-    }
-  } catch (error) {
-    res.status(400).json(error);
-  }
-})
+router.post("/logout", async (req, res) => {
+	try {
+		if (req.session.logged_in) {
+			req.session.destroy(() => {
+				res.status(204).end();
+			});
+		} else {
+			res.status(404).end();
+		}
+	} catch (error) {
+		res.status(400).json(error);
+	}
+});
 
 module.exports = router;
