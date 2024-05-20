@@ -1,0 +1,146 @@
+:root {
+	background-color: rgb(180, 180, 180);
+}
+.card {
+	border-color: black;
+}
+
+.dabutton {
+	/* separate colors to show what is what */
+	background-color: #4b006e;
+	border-color: black;
+	color: rgb(255, 251, 251);
+	font-size: 16px;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 12px;
+}
+/* shadow(the hedgehog) */
+.dabutton:hover {
+	box-shadow:
+		0 2px 4px 0 rgba(0, 0, 0, 0.8),
+		0 6px 20px 0 rgba(0, 0, 0, 0.8);
+}
+/* click animation */
+.dabutton:active {
+	box-shadow: 0 2px #000000;
+	transform: translateY(4px);
+}
+
+/* custom Google font */
+.handlee-regular {
+	font-family: "Handlee", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+/* custom sections */
+.div {
+	text-align: center;
+	font-size: 20px;
+	color: #000;
+}
+/* profile/user logged in */
+.login-text {
+	font-weight: bold;
+	font-size: 30px;
+}
+.nav {
+	text-align: center;
+	color: #000;
+}
+/* login.handlebar */
+#user-info {
+	font-size: larger;
+	text-align: center;
+}
+.h1 {
+	text-align: center;
+	font-size: 36px;
+	color: #000;
+}
+/* login text from the main.handlebar */
+.main-login {
+	font-size: 20px;
+	font-style: bold;
+}
+/* background image for scores page. should be graveyard background */
+.backsplash {
+}
+/* hangman*/
+.gallows {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.beam {
+	width: 150px;
+	height: 20px;
+	background-color: #8b4513;
+}
+.base {
+	width: 100px;
+	height: 20px;
+	background-color: #8b4513;
+}
+.hangman {
+	position: relative;
+	width: 200px;
+	height: 200px;
+}
+.head {
+	position: absolute;
+	top: 20px;
+	left: 80px;
+	width: 40px;
+	height: 40px;
+	background-color: #000;
+	border-radius: 50%;
+}
+.body {
+	position: absolute;
+	top: 60px;
+	left: 100px;
+	width: 20px;
+	height: 80px;
+	background-color: #000;
+}
+.right-arm,
+.left-arm {
+	position: absolute;
+	top: 80px;
+	width: 60px;
+	height: 20px;
+	background-color: #000;
+}
+.left-arm {
+	left: 70px;
+	transform: rotate(45deg);
+}
+.right-arm {
+	right: 70px;
+	transform: rotate(-45deg);
+}
+.right-leg,
+.left-leg {
+	position: absolute;
+	top: 140px;
+	width: 60px;
+	height: 20px;
+	background-color: #000;
+}
+.right-leg {
+	right: 70px;
+	transform: rotate(45deg);
+}
+.left-leg {
+	left: 70px;
+	transform: rotate(-45deg);
+}
+.hidden {
+	display: none;
+}
