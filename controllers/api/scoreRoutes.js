@@ -34,7 +34,7 @@ router.post("/", withAuthorization, async (req, res) => {
   try {
     const scoreData = await Score.create({
       user: req.body.user,
-      score: req.body.score,
+      high_scores: req.body.high_scores,
     });
 
     res.status(200).json(scoreData);

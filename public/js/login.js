@@ -1,6 +1,5 @@
 const loginFormHandler = async (event) => {
-    event.preventDefault();
-  
+  event.preventDefault();  
     // Collect values from the login form
     const email = document.getElementById('username-login').value.trim();
     const password = document.getElementById('password-login').value.trim();
@@ -9,7 +8,7 @@ const loginFormHandler = async (event) => {
       // Send a POST request to the API endpoint
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ name, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -41,7 +40,8 @@ const loginFormHandler = async (event) => {
         alert(response.statusText);
       }
     }
-  };
+  }
+};
   
   document
     .getElementById('login-form')
