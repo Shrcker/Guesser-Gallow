@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Score } = require("../../models");
 const withAuthorization = require("../../utils/auth");
 
 // endpoint for /api/users
@@ -32,14 +32,14 @@ router.get("/:id", async (req, res) => {
 	}
 });
 
-router.post("/", withAuthorization, async (req, res) => {
+router.post("/", async (req, res) => {
 	try {
 		const userData = await User.create({
 			name: req.body.name,
-			email: req.body.email,
 			password: req.body.password,
-			score_id: null,
 		});
+
+    console.log(userData);
 		res.status(200).json(userData);
 	} catch (error) {
 		res.status(400).json(error);
@@ -59,7 +59,6 @@ router.put("/:id", withAuthorization, async (req, res) => {
 
 		const updatedUser = await userData.update({
 			name: req.body.name,
-			email: req.body.email,
 			password: req.body.password,
 		});
 		res.status(200).json(updatedUser);
@@ -88,7 +87,7 @@ router.delete("/:id", withAuthorization, async (req, rest) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.name } });
+    const userData = await User.findOne({ where: { name: req.body.name } });
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword || !userData) {

@@ -11,7 +11,7 @@ Score.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
-    highScores: {
+    high_scores: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
