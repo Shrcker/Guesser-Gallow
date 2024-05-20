@@ -75,13 +75,16 @@
 }
 /* color change for links */
 a:link {
-	color: #3b3b3b
+	color: #747474
 }
 a:visited {
-	color: #3b3b3b;
+	color: #bdbdbd;
 }
 a:hover {
-	color: #000;
+	color: #bdbdbd;
+}
+li {
+	list-style-type: none;
 }
 /* hangman*/
 .gallows {
