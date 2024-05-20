@@ -75,13 +75,13 @@
 }
 /* color change for links */
 a:link {
-	color: #747474
+	color: #ffffff
 }
 a:visited {
-	color: #bdbdbd;
+	color: #ffffff;
 }
 a:hover {
-	color: #bdbdbd;
+	color: #ffffff;
 }
 li {
 	list-style-type: none;
