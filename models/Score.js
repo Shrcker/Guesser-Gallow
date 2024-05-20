@@ -11,6 +11,11 @@ Score.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
+    high_scores: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
 		date_created: {
 			type: DataTypes.DATE,
 			allowNull: false,
