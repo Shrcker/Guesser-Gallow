@@ -110,3 +110,11 @@
 .hidden {
     display: none;
 }
+.guessed-letters {
+    margin-top: 20px;
+}
+.letter {
+    font-size: 2em;
+    margin: 0 5px;
+}
+

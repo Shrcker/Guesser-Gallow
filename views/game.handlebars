@@ -1,7 +1,19 @@
   <h1>Guess the Word:</h1>
    <div id="game">
+    <div id="score"></div>
+    <br>
+    <br>
         <div id="word-to-guess"></div>
+        <br>
+         <div id="incorrect-guesses"></div>
+          <div id="guessed-letters" class="guessed-letters"></div>
+           <br>
+            <br>
         <div id="hangman-drawing" class="hangman">
+            <div class="gallows"></div>
+            <div class="beam"></div>
+            <div class="base"></div>
+            <div class="hangman"></div>
             <div class="head hidden"></div>
             <div class="body hidden"></div>
             <div class="left-arm hidden"></div>
@@ -9,12 +21,10 @@
             <div class="left-leg hidden"></div>
             <div class="right-leg hidden"></div>
         </div>
-        <div id="letters-to-choose">
-            {{#each "abcdefghijklmnopqrstuvwxyz"}}
-                <button onclick="makeGuess('{{this}}')">{{this}}</button>
-            {{/each}}
+        <div id="guess-input"></div>
+        <label for="letter-guess">Enter a letter:</label>
+            <input id="letter-guess" class="letter-guess" maxlength="1" autofocus />
         </div>
-        <div id="incorrect-guesses">Incorrect Guesses: 0</div>
     </div>
-    
+
     <script src="./js/game.js"></script>
