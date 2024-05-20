@@ -14,14 +14,14 @@
   <div class="flex-column justify-space-around handlee-regular">
     <header class="display-flex justify-space-between align-center p-2">
       <h1 class="h1">
-        <div href="/">Guesser Gallow</div>
+        <a href="/">Guesser Gallow</a>
       </h1>
       <nav class="nav">
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/profile">profile</a> 
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <div class="login-text" href="/login">login</div>
+        <a class="login-text" href="/login">login</a>
         {{/if}}
       </nav>
     </header>
