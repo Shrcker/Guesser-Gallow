@@ -48,13 +48,12 @@ async function makeGuess(letter, gameState) {
 			gameState.incorrectGuesses++;
 			if (gameState.incorrectGuesses >= gameState.maxIncorrectGuesses) {
 				gameState.gameOver = true;
-				gameState.score -= 300;
+				gameState.score = 0;
 
 				alert("Game Over! The word was " + gameState.wordToGuess.join(""));
 				gameState.wordToGuess = await fetchNewWord();
 				gameState.guessedLetters = [];
 				gameState.incorrectGuesses = 0;
-				return;
 			}
 		} else {
 			if (
