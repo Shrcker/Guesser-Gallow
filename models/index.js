@@ -1,8 +1,8 @@
 const Score = require("./Score");
 const User = require("./User");
 
-User.hasOne(Score, {
-  foreignKey: "user_id",
+User.hasMany(Score, {
+	foreignKey: "user_id",
 });
 
 Score.belongsTo(User, {
