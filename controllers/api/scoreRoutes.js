@@ -34,7 +34,7 @@ router.post("/", withAuthorization, async (req, res) => {
 	try {
 		const scoreData = await Score.create({
 			high_scores: req.body.high_scores,
-			user_id: req.body.user_id,
+			user_id: req.session.user_id,
 		});
 
 		res.status(200).json(scoreData);
@@ -56,7 +56,6 @@ router.put("/", withAuthorization, async (req, res) => {
 
 		const updatedScore = await scoreData.update({
 			high_scores: req.body.high_scores,
-			user_id: req.body.user_id,
 		});
 		res.status(200).json(updatedScore);
 	} catch (error) {
